@@ -47,7 +47,7 @@ socket.on('message', (msg, rinfo) => {
 					lastDatalogger.port 	= rinfo.port;
 					lastDatalogger.time 	= (new Date).getTime();
 					console.log(`Packet with size of ${rinfo.size} bytes redirected to Decagon`);
-					fs.appendFile('data/' + (new Date()).toISOString().split('T')[0] + '_' + rinfo.address + '.txt', (new Date()).toISOString() + ' DATALOGGER ' + msg + '\n');
+					fs.appendFile('data/' + (new Date()).toISOString().split('T')[0] + '_' + lastDatalogger.address + '.txt', (new Date()).toISOString() + ' DATALOGGER ' + msg + '\n');
 				}
 			});
 		}
@@ -70,7 +70,7 @@ socket.on('message', (msg, rinfo) => {
 				else
 				{
 					console.log(`Packet with size of ${rinfo.size} bytes redirected to datalogger`);
-					fs.appendFile('data/' + (new Date()).toISOString().split('T')[0] + '_' + rinfo.address + '.txt', (new Date()).toISOString() + ' DECAGON ' + msg + '\n');
+					fs.appendFile('data/' + (new Date()).toISOString().split('T')[0] + '_' + lastDatalogger.address + '.txt', (new Date()).toISOString() + ' DECAGON ' + msg + '\n');
 				}
 			});
 		}
