@@ -1,0 +1,1 @@
+Manual docker run: "docker run -p 80:80 -p 8035:8035/udp %image_id%"
